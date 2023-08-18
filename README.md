@@ -13,8 +13,7 @@ This project is a test that was sent by a company to assess the level of experie
 - Clear text button, to clear the text in the Text and TextField widgets.
 - Go to page1 button.
 - Go to page 2 button.
- <br/>
- 
+ <br/> 
 3- Page 1, which is called Animations page, and it contains:
 - Text at the top which contains the same value in the previous screen.
 - A main big widget represents the selected shape.
