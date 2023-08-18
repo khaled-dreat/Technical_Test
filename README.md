@@ -30,8 +30,8 @@ buttons).<br/>
 - Each card contains both image and name of the Pokémon.
 <br/>
 NOTE: to implement the scenario you can use any package and any methodology you want
-<br/>
-<br/>
+ <br/>
+ <br/>
 # What did you learn
 - More interaction with the API.
 - More interaction with the Model.
