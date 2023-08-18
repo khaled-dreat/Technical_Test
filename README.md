@@ -1,5 +1,5 @@
 This project is a test that was sent by a company to assess the level of experience of the applicant for a job application, and all of the following were:
-### The aim of this test is to check these main points:
+### - The aim of this test is to check these main points:
 - Your knowledge and experience in Flutter.
 - Your ability to write a clean and readable code.
 - Ability to analyze problems and find solutions in a fast way.
