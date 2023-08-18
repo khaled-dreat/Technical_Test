@@ -9,23 +9,23 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-  final List<Widget> shapes = [
-    Container(width: 100.w, height: 80.h, color: Colors.blue.shade700),
-    Container(
-        width: 100.w,
-        height: 80.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          color: Colors.blue.shade300,
-        )),
-    Container(
-        width: 100.w,
-        height: 80.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100.r),
-          color: Colors.red.shade300,
-        )),
-  ];
+  List<Widget> get shapes => [
+        Container(width: 100.w, height: 80.h, color: Colors.blue.shade700),
+        Container(
+            width: 100.w,
+            height: 80.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.r),
+              color: Colors.blue.shade300,
+            )),
+        Container(
+            width: 100.w,
+            height: 80.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100.r),
+              color: Colors.red.shade300,
+            )),
+      ];
   final List<Widget> shapesSelected = [
     Container(
       width: 180.w,
@@ -73,6 +73,8 @@ class _Page1State extends State<Page1> {
 
   @override
   Widget build(BuildContext context) {
+    InfoController pInfo = Provider.of<InfoController>(context);
+
     return Scaffold(
       appBar: const CustomAppBar(title: 'Animation'),
       body: Column(children: [
@@ -81,8 +83,7 @@ class _Page1State extends State<Page1> {
           flex: 5,
           child: Column(children: [
             // todo : add provider for this text
-            const Text("data"),
-
+            Text(pInfo.name),
             AnimatedContainer(
                 duration: const Duration(milliseconds: 500),
                 width: 180.w,

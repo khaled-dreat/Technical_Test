@@ -10,7 +10,7 @@ class AppRoute {
   };
 
   // * inti Route
-  static String? get initRoute => PagePokemon.nameRoute;
+  static String? get initRoute => PageSplash.nameRoute;
 
   // * push Name
   static void go(BuildContext context, String nameRoute) =>

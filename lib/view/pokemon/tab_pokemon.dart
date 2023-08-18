@@ -9,26 +9,22 @@ class TabPokemon extends StatefulWidget {
 
 class _TabPokemonState extends State<TabPokemon> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(
-      Duration.zero,
-      () {
-        ApiController pApiPokemon =
-            Provider.of<ApiController>(context, listen: false);
-        pApiPokemon.fetchDataPokemon(context);
-      },
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
     ApiController pApiPokemon = Provider.of<ApiController>(context);
     return pApiPokemon.loading
-        ? const CircularProgressIndicator()
+        ? const SkeltonView()
         : (pApiPokemon.pokemonData?.results != null &&
                 pApiPokemon.pokemonData!.results!.isNotEmpty)
-            ? const PokemonGridelBuilder()
-            : const ErrorText(title: "لا يوجد بيانات");
+            ? RefreshIndicator(
+                onRefresh: onRefresh,
+                child: const PokemonGridelBuilder(),
+              )
+            : const ErrorText(title: "No Data");
+  }
+
+  Future<void> onRefresh() async {
+    ApiController pApiPokemon =
+        Provider.of<ApiController>(context, listen: false);
+    pApiPokemon.fetchDataPokemon(context);
   }
 }

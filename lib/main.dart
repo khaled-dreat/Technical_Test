@@ -13,5 +13,8 @@ void main() {
 List<SingleChildWidget> providers = [
   ChangeNotifierProvider(
     create: (context) => ApiController(),
+  ),
+  ChangeNotifierProvider(
+    create: (context) => InfoController(),
   )
 ];

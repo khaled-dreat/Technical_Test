@@ -9,28 +9,18 @@ class PageHome extends StatefulWidget {
 }
 
 class _PageHomeState extends State<PageHome> {
-  TextEditingController textController = TextEditingController();
-  String text = "Your Name";
+  final TextEditingController controller = TextEditingController();
   @override
   void dispose() {
-    textController.dispose();
+    controller.dispose();
     super.dispose();
-  }
-
-// * Change Text Function
-  void changeText() {
-    if (textController.text.isNotEmpty) {
-      text = textController.text;
-    } else {
-      text = "Your Name";
-    }
-    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    InfoController pInfo = Provider.of<InfoController>(context);
     return Scaffold(
-      appBar: CustomAppBar(title: "Home"),
+      appBar: const CustomAppBar(title: "Home"),
       body: Column(children: [
         // * Enter Name
         Expanded(
@@ -42,18 +32,18 @@ class _PageHomeState extends State<PageHome> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.r),
                   child: TextFormField(
-                      controller: textController,
+                      controller: controller,
+                      onSaved: (newValue) {},
                       onChanged: (value) {
-                        changeText();
+                        pInfo.changeName = value;
                       },
-                      decoration:
-                          const InputDecoration(hintText: "Enter Your Name")),
+                      decoration: InputDecoration(hintText: "Enter Your Name")),
                 ),
                 // * Space
                 AppDime.xlg.verticalSpace,
                 // * Text Your Name
                 Text(
-                  text,
+                  pInfo.name,
                   style: TextStyle(fontSize: 18.sp),
                 )
               ]),
@@ -67,10 +57,8 @@ class _PageHomeState extends State<PageHome> {
                   // * Clear Button
                   TextButton.icon(
                       onPressed: () {
-                        setState(() {
-                          textController.text = "";
-                          changeText();
-                        });
+                        pInfo.changeName = "";
+                        controller.text = "";
                       },
                       icon: Icon(Icons.delete, color: Colors.red, size: 25.sp),
                       label: Text(
@@ -86,7 +74,7 @@ class _PageHomeState extends State<PageHome> {
                   // * Custom Home Button page2
                   CustomHomeButton(
                     isPage2: true,
-                    onTap: () => AppRoute.go(context, Page1.nameRoute),
+                    onTap: () => AppRoute.go(context, PagePokemon.nameRoute),
                   ),
                 ]),
           ),

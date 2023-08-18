@@ -12,8 +12,15 @@ class _PageSplashState extends State<PageSplash> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3),
-        () => AppRoute.goReplace(context, PageHome.nameRoute));
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        ApiController pApiPokemon =
+            Provider.of<ApiController>(context, listen: false);
+        pApiPokemon.initRequest(context);
+        AppRoute.goReplace(context, PageHome.nameRoute);
+      },
+    );
   }
 
   @override

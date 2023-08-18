@@ -1,18 +1,18 @@
 part of '../../../../utils/import/app_import.dart';
 
 class CustomHomeButton extends StatelessWidget {
-  final bool isPage2;
-  final void Function() onTap;
   const CustomHomeButton({
     super.key,
     required this.isPage2,
     required this.onTap,
   });
+  final bool isPage2;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onTap,
+      onTap: onTap,
       child: Container(
           alignment: Alignment.center,
           decoration: BoxDecoration(

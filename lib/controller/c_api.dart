@@ -16,9 +16,9 @@ class ApiController extends ChangeNotifier {
   // ******************** Pokemon *********************
   ModelPokemonApp? pokemonData;
   Future<void> fetchDataPokemon(BuildContext context) async {
-    loading = true;
+    changeLoading = true;
     pokemonData = await ApiEndPoint().getPokemon();
-    loading = false;
+    changeLoading = false;
     notifyListeners();
   }
 }
