@@ -6,8 +6,8 @@ This project is a test that was sent by a company to assess the level of experie
 - Ability to analyze problems and find solutions in a fast way.
 ### You can see the UI/UX for the application by clicking this [link](https://www.figma.com/proto/3dxrjhWKQksCQHPU0wzF2y/Untitled?page-id=0%3A1&type=design&node-id=1-7&viewport=300%2C322%2C0.37&scaling=scale-down&starting-point-node-id=1%3A4).
 ###  You should do the following in the application:
-1- Splash screen contains Flutter logo in the middle, which stays for 3 seconds.--
-2- After 3 seconds the app will be navigated to HOME screen, which contains:--
+1- Splash screen contains Flutter logo in the middle, which stays for 3 seconds.__
+2- After 3 seconds the app will be navigated to HOME screen, which contains:__
 - Text field where the user can enter the input.
 - Text widget, with a value changed based on the TextField input changed.
 - Clear text button, to clear the text in the Text and TextField widgets.
